@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:darkgrey;
+        }
+        table,tr,th,td{
+            border:1px solid black;
+            border-collapse: collapse;
+        }
+        #grid-container{
+            display:grid;
+            grid-template-columns:repeat(4, 1fr);
+            grid-gap:10px;
+        }
+        #all{
+            text-align: center;
+        }
+        .tble{
+            text-align: center;
+            padding:40px;
+            font-size: larger;
+        }
+        #cr{
+            padding:20px;
+            border: 1px solid black;
+        }
+        #up{
+            padding:20px;
+            border: 1px solid black;
+        }
+        #del{
+            padding:20px;
+            border: 1px solid black;
+        }
+        #getdiv{
+            padding:20px;
+            border: 1px solid black;
+        }
+        #all{
+            padding:20px;
+        }
+        table{
+            width: 100%;
+        }
+        .tble{
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        </style>
+</head>
+<body>
+   <h1 style="text-align: center">USER DATA</h1>
+    <div id="grid-container">
+        <div id="cr">
+           <h2> CREATE USER</h2><br>
+           <label for="cid">Enter id</label>
+           <input type="text" id="cid" required><br><br>
+           <label for="cname">Enter name</label>
+           <input type="text" id="cname" required><br><br>
+           <label for="cbr">Enter Branch</label>
+           <input type="text" id="cbr" required><br><br>
+           <button onclick="createUser()" type="submit">CREATE</button>
+        </div>
+        <div id="up">
+           <h2> UPDATE USER</h2><br>
+           <label for="uid">Enter id</label>
+           <input type="text" id="uid" required><br><br>
+           <label for="uname">Enter name</label>
+           <input type="text" id="uname"><br><br>
+           <label for="ubr">Enter Branch</label>
+           <input type="text" id="ubr"><br><br>
+           <button onclick="updateUser()">UPDATE</button>
+        </div>
+        <div id="del">
+            <h2> DELETE USER</h2><br>
+            <label for="did">Enter id</label>
+            <input type="text" id="did" required><br><br>
+            <button onclick="deleteUser()">DELETE</button>
+        </div>
+        <div id="getdiv">
+            <h2> GET USER</h2><br>
+            <label for="gid">Enter id</label>
+            <input type="text" id="gid" required><br><br>
+            <button onclick="getUser()">FETCH</button><br><br>
+        </div>
+    </div>
+    <div id="all"><button onclick="getAll()">GETALL</button></div>
+    <div class="tble">
+        <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>BRANCH</th>
+        </tr>
+        <tbody id="result"></tbody> 
+    </table>
+    </div>                          
+    <script src="apii.js"></script>
+</body>
+</html>
